@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Biron's Portfolio</title>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>BIRON SU</div>
+                </div>
+            </div>
+        </div>
+        <div class="intro-wrapper">
+            <div class="intro-background">
+                <div class="intro-center-text" id="intro">
+                        <h1>Welcome to my page!</h1>
+                        <h2>I am working on my website!</h2>
+                        <h3>Testing things as I go!</h3>
+                        <h3>This is pretty neat!</h3>
+                </div>
+            </div>
+        </div>
+        <div class="project-container">
+            <div id="project">
+                <h1>Projects</h1>
+            </div>
+            <div class="project-items-wrapper">
+                <div class="project-item-wrapper">
+                    <div class="project-img-background">Flock</div>
+                    <div class="project-text-container">
+                        <p>text here</p>
+                    </div>
+                </div>
+                <div class="project-item-wrapper">
+                    <div class="project-img-background">Flock</div>
+                    <div class="project-text-container">
+                        <p>text here</p>
+                    </div>
+                </div>
+                <div class="project-item-wrapper">
+                    <div class="project-img-background">Flock</div>
+                    <div class="project-text-container">
+                        <p>text here</p>
+                    </div>
+                </div>
+                <div class="project-item-wrapper">
+                    <div class="project-img-background">Flock</div>
+                    <div class="project-text-container">
+                        <p>text here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-me-container">
+            <div id="about">
+                <h1>About Me</h1>
+            </div>
+            <div class="about-me-wrapper">
+                <div class="profile-img-wrapper">
+                    <img src="images/ProfilePics/BironProfile.jpg" alt="">
+                </div>
+                <div class="profile-content-wrapper">
+                    <h1>
+                        Hello, thank you for visiting my portfolio!
+                    </h1>
+                    <p>
+                        I am an iOS Software Developer that uses Swift on Xcode and is currently studying HTML, CSS, and JavaScript. I have went to a training program called Pursuit to learn Swift and is currently exploring the wonders of JavaScript on my own while using this portfolio as one of my projects.
+                    </p>
+                </div>
+                            
+            </div>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-items-wrapper">
+                <div class="contact-item-wrapper">
+                    <div class="contact-img-background" style ="background-image: url(images/BackgroundIMGs/githubBackground.jpg)"></div>
+                    <div class="img-text-wrapper">
+                        <a href="https://github.com/BironSu" target="_blank">
+                            <div class="logo-wrapper">
+                                <img src="images/Logos/githubLogo.png" alt="">
+                            </div>
+                            <div class="subtitle">
+                                Visit my GitHub!
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-item-wrapper">
+                    <div class="contact-img-background" style ="background-image: url(images/BackgroundIMGs/linkedInBackground.jpg)"></div>
+                    <div class="img-text-wrapper">
+                        <a href="https://www.linkedin.com/in/bironsu/" target="_blank">
+                            <div class="logo-wrapper">
+                                <img src="images/Logos/linkedinLogo.png" alt="">
+                            </div>
+                            <div class="subtitle">
+                                Visit my LinkedIn!
+                            </div>
+                        </a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</body>
+<footer>
+    <h3>Biron Su's Portfolio Copyright©</h3>
+</footer>
+<script>
+    const portfolioItems = document.querySelectorAll('.contact-item-wrapper');
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener('mouseover', ()=> {
+            console.log(portfolioItem.childNodes[1].classList);
+            portfolioItem.childNodes[1].classList.add('img-darken');
+        })
+        portfolioItem.addEventListener('mouseout', ()=> {
+            console.log(portfolioItem.childNodes[1].classList);
+            portfolioItem.childNodes[1].classList.remove('img-darken');
+        })
+    })
+    $(window).scroll(function() {
+        var scrollTop = $(this).scrollTop();
+
+        $('.nav-wrapper').css({
+            background: function() {
+                // var elementHeight = $(this).height(),
+                opacity = (scrollTop/100);
+                var color = `rgba(245,245,245,${opacity})`;
+                return color;
+            }
+        });
+        $('.intro-center-text').css({
+            opacity: function() {
+                opacity = 1 - (scrollTop*0.003);
+                return opacity;
+            }
+        })
+    });
+</script>
+</html>
