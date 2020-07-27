@@ -11,6 +11,7 @@ body {
 #intro, #project, #about{
     position: sticky;
     top: 6em;
+    z-index: 9;
 }
 
 /* Nav Styles */
@@ -76,6 +77,9 @@ body {
     background-size: 100% 100%;
     padding: 10%;
 }
+.intro-center-text {
+    background-color: rgba(252, 252, 252, 0.6);
+}
 
 /* Projects */
 .project-container {
@@ -92,8 +96,8 @@ body {
 .project-item-wrapper {
     position: relative;
     background-color: rgb(245, 245, 245);
-    height: 400px;
-    width: 600px;
+    height: 200px;
+    width: 80%;
 }
 /* About Page */
 .about-me-wrapper {

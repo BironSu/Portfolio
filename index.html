@@ -16,6 +16,9 @@
                     <a href="index.html">Home</a>
                 </div>
                 <div class="nav-link-wrapper">
+                    <a href="projects.html">Projects</a>
+                </div>
+                <div class="nav-link-wrapper">
                     <a href="about.html">About</a>
                 </div>
             </div>
@@ -44,25 +47,29 @@
                 <div class="project-item-wrapper">
                     <div class="project-img-background">Flock</div>
                     <div class="project-text-container">
-                        <p>text here</p>
+                        <p>Capstone project!</p>
+                        <a href="https://github.com/SLRAM/FlockApp" target="_blank">Flock Github</a>
                     </div>
                 </div>
                 <div class="project-item-wrapper">
-                    <div class="project-img-background">Flock</div>
+                    <div class="project-img-background">Zombie Shooter</div>
                     <div class="project-text-container">
-                        <p>text here</p>
+                        <p>Solo Project using SpriteKit!</p>
+                        <a href="https://github.com/BironSu/ZombieShooter" target="_blank">Zombie Shooter Github</a>
                     </div>
                 </div>
                 <div class="project-item-wrapper">
-                    <div class="project-img-background">Flock</div>
+                    <div class="project-img-background">PokeDex</div>
                     <div class="project-text-container">
-                        <p>text here</p>
+                        <p>First Solo Project Exercise!</p>
+                        <a href="https://github.com/BironSu/PokeDex" target="_blank">Pokedex Github</a>
                     </div>
                 </div>
                 <div class="project-item-wrapper">
-                    <div class="project-img-background">Flock</div>
+                    <div class="project-img-background">Javascript Exercises</div>
                     <div class="project-text-container">
-                        <p>text here</p>
+                        <p>Challenges I've done while practicing Javascript</p>
+                        <a href="https://github.com/BironSu/JavaScriptChallenges" target="_blank">Javascript Github</a>
                     </div>
                 </div>
             </div>
@@ -136,15 +143,6 @@
     })
     $(window).scroll(function() {
         var scrollTop = $(this).scrollTop();
-
-        $('.nav-wrapper').css({
-            background: function() {
-                // var elementHeight = $(this).height(),
-                opacity = (scrollTop/100);
-                var color = `rgba(245,245,245,${opacity})`;
-                return color;
-            }
-        });
         $('.intro-center-text').css({
             opacity: function() {
                 opacity = 1 - (scrollTop*0.003);
