@@ -43,3 +43,8 @@ window.smoothScroll = function(target) {
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
+window.activeNavLink = function(target){
+    var activeContainer = target;
+    console.log(target);
+    console.log('hello');
+}
