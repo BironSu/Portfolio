@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="javascript.js"></script>
     <title>Biron's Portfolio</title>
 </head>
 <body>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
-                <div class="nav-link-wrapper active-nav-link">
-                    <a href="index.html">Home</a>
+                <div class="nav-link-wrapper">
+                    <a onclick="smoothScroll(document.getElementById('intro-top'))">Home</a>
                 </div>
                 <div class="nav-link-wrapper">
-                    <a href="projects.html">Projects</a>
+                    <a onclick="smoothScroll(document.getElementById('project-top'))">Projects</a>
                 </div>
                 <div class="nav-link-wrapper">
-                    <a href="about.html">About</a>
+                    <a onclick="smoothScroll(document.getElementById('about-top'))">About</a>
                 </div>
             </div>
 
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="intro-wrapper">
+        <div class="intro-wrapper" id="intro-top">
             <div class="intro-background">
                 <div class="intro-center-text" id="intro">
                         <h1>Welcome to my page!</h1>
@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <div class="project-container">
+        <div class="project-container" id="project-top">
             <div id="project">
                 <h1>Projects</h1>
             </div>
@@ -75,7 +75,7 @@
             </div>
         </div>
         
-        <div class="about-me-container">
+        <div class="about-me-container" id="about-top">
             <div id="about">
                 <h1>About Me</h1>
             </div>
@@ -129,26 +129,4 @@
 <footer>
     <h3>Biron Su's Portfolio Copyright©</h3>
 </footer>
-<script>
-    const portfolioItems = document.querySelectorAll('.contact-item-wrapper');
-    portfolioItems.forEach(portfolioItem => {
-        portfolioItem.addEventListener('mouseover', ()=> {
-            console.log(portfolioItem.childNodes[1].classList);
-            portfolioItem.childNodes[1].classList.add('img-darken');
-        })
-        portfolioItem.addEventListener('mouseout', ()=> {
-            console.log(portfolioItem.childNodes[1].classList);
-            portfolioItem.childNodes[1].classList.remove('img-darken');
-        })
-    })
-    $(window).scroll(function() {
-        var scrollTop = $(this).scrollTop();
-        $('.intro-center-text').css({
-            opacity: function() {
-                opacity = 1 - (scrollTop*0.003);
-                return opacity;
-            }
-        })
-    });
-</script>
 </html>
