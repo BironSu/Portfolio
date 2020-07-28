@@ -38,23 +38,23 @@ body {
     opacity: 1;
 }
 
-.nav-link-wrapper {
+.nav-menu {
     height: 22px;
     border-bottom: 1px solid transparent;
     transition: border-bottom 0.5s;
 }
 
-.nav-link-wrapper a {
+.nav-menu a {
     color: #8a8a8a;
     text-decoration: none;
     transition: color 0.5s;
 }
 
-.nav-link-wrapper:hover {
+.nav-menu:hover a{
     border-bottom: 1px solid black;
 }
 
-.nav-link-wrapper:hover a {
+.nav-menu:hover a {
     color: black;
 }
 
