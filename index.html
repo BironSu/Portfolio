@@ -12,16 +12,19 @@
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
-                <div class="nav-menu">
-                    <a href="#intro" onclick="smoothScroll(document.getElementById('intro-top'))">Home</a>
-                    <a href="#project" onclick="smoothScroll(document.getElementById('project-top'))">Projects</a>
-                    <a href="#about" onclick="smoothScroll(document.getElementById('about-top'))">About</a>
+                <div class="brand">
+                    <a href="#home" onclick="smoothScroll(document.getElementById('intro-top'))">BIRON SU</a>
                 </div>
             </div>
-
-            <div class="right-side">
-                <div class="brand">
-                    <div>BIRON SU</div>
+            <div class="right-side" id="top-menu">
+                <div class="nav-menu">
+                    <a href="#project" onclick="smoothScroll(document.getElementById('project-top'))">Projects</a>
+                </div>
+                <div class="nav-menu">
+                    <a href="#about" onclick="smoothScroll(document.getElementById('about-top'))">About</a>
+                </div>
+                <div class="nav-menu">
+                    <a href="#contact" onclick="smoothScroll(document.getElementById('contact-top'))">Contact</a>
                 </div>
             </div>
         </div>
@@ -71,7 +74,7 @@
             </div>
         </div>
         
-        <div class="about-me-container" id="about-top" onscroll="activeNavLink(document.getElementById('about-top'))">
+        <div class="about-me-container" id="about-top">
             <div id="about">
                 <h1>About Me</h1>
             </div>
@@ -90,7 +93,10 @@
                             
             </div>
         </div>
-        <div class="contact-wrapper">
+        <div class="contact-wrapper" id="contact-top">
+            <div class="contact">
+                <h1>Contact</h1>
+            </div>
             <div class="contact-items-wrapper">
                 <div class="contact-item-wrapper">
                     <div class="contact-img-background" style ="background-image: url(images/BackgroundIMGs/githubBackground.jpg)"></div>

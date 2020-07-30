@@ -26,12 +26,13 @@ body {
 }
 
 .left-side {
-    display: flex;
+    opacity: 1;
+    font-size: 18px;
 }
 .right-side {
-    opacity: 1;
+    display: flex;
 }
-.nav-wrapper > .left-side > div {
+.nav-wrapper > .right-side > div {
     margin-right: 20px;
     font-size: 0.9em;
     text-transform: uppercase;
@@ -44,7 +45,7 @@ body {
     transition: border-bottom 0.5s;
 }
 
-.nav-menu a {
+.nav-menu a, .brand a {
     color: #8a8a8a;
     text-decoration: none;
     transition: color 0.5s;
@@ -71,11 +72,12 @@ body {
     text-align: center;
 }
 .intro-background {
-    background-image: url("images/BackgroundIMGs/Business-HQ.jpg");
+    background-color: skyblue;
+    /* background-image: url("images/BackgroundIMGs/Business-HQ.jpg"); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
-    padding: 10%;
+    padding: 15%;
 }
 .intro-center-text {
     background-color: rgba(252, 252, 252, 0.6);
@@ -83,7 +85,7 @@ body {
 
 /* Projects */
 .project-container {
-    background: green;
+    background: lightslategray;
 }
 .project-items-wrapper {
     position: relative;

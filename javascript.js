@@ -95,7 +95,7 @@ menuItems.click(function(e){
 // Bind to scroll
 // Cache selectors
 var lastId,
-    topMenu = $("#top-menu"),
+    topMenu = $("#nav-menu"),
     topMenuHeight = topMenu.outerHeight()+15,
     // All list items
     menuItems = topMenu.find("a"),
@@ -132,7 +132,7 @@ $(window).scroll(function(){
        lastId = id;
        // Set/remove active class
        menuItems
-         .parent().removeClass("active")
-         .end().filter("[href='#"+id+"']").parent().addClass("active");
+         .parent().removeClass("active-nav-link")
+         .end().filter("[href='#"+id+"']").parent().addClass("active-nav-link");
    }                   
 });
