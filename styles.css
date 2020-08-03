@@ -67,7 +67,6 @@ body {
 }
 .intro-background {
     background-color: skyblue;
-    /* background-image: url("images/BackgroundIMGs/Business-HQ.jpg"); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -88,6 +87,7 @@ body {
     padding-left: calc(6% + 1.9vmin);
     padding-right: calc(6% + 1.9vmin);
     padding-bottom: calc(6% + 1.9vmin);
+    padding-top: calc(1% + 1.9vmin);
 }
 .project {
     background-color: rgb(241, 148, 210);
@@ -108,6 +108,31 @@ body {
     align-content: end;
     grid-gap: 7px;
   }
+
+.projectBG-1 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("images/ProjectIMGs/Flock.png");
+}
+.projectBG-2 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("images/ProjectIMGs/Zombie\ Shooter.png");
+}
+.projectBG-3 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("images/ProjectIMGs/Pokedex.png");
+}
+.projectBG-4 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("images/ProjectIMGs/JavascriptChallenge.png");
+}
 
 /* About Page */
 .about-me-wrapper {
