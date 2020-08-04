@@ -60,6 +60,7 @@ body {
 .active-nav-link a {
     color: black !important;
 }
+
 /* Introduction Page*/
 .intro-wrapper {
     position: relative;
@@ -79,59 +80,52 @@ body {
 /* Projects */
 .project-container {
     background: lightslategray;
+    height: auto;
 }
 .project-box {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    padding-left: calc(6% + 1.9vmin);
-    padding-right: calc(6% + 1.9vmin);
     padding-bottom: calc(6% + 1.9vmin);
     padding-top: calc(1% + 1.9vmin);
 }
-.project {
-    background-color: rgb(241, 148, 210);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: auto;
-    margin: 0px;
-    grid-column: span 3;
-}
-
 .project-grid-wrapper {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(33%, 1fr));
     display: grid;
-    height: 35em;
+    height: auto;
+    justify-items: center;
     justify-content: center;
     align-content: end;
-    grid-gap: 7px;
+    grid-gap: 20px;
   }
-
-.projectBG-1 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("images/ProjectIMGs/Flock.png");
-}
-.projectBG-2 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("images/ProjectIMGs/Zombie\ Shooter.png");
-}
-.projectBG-3 {
+.project {
+    background-color: rgb(241, 148, 210);
+    transition: 0.5s;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("images/ProjectIMGs/Pokedex.png");
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
 }
-.projectBG-4 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("images/ProjectIMGs/JavascriptChallenge.png");
+.projectBG-1 {
+    background-image: url("images/ProjectIMGs/FlockRounded.png");
+}
+.projectBG-1:hover {
+    background-image: url("images/ProjectIMGs/FlockRoundedHover.png");
+}
+.projectBG-2 {
+    background-image: url("images/ProjectIMGs/ZombieShooterRounded.png");
+}
+.projectBG-2:hover {
+    background-image: url("images/ProjectIMGs/ZombieShooterRoundedHover.png");
+}
+.projectBG-3 {
+    background-image: url("images/ProjectIMGs/PokedexRounded.png");
+}
+.projectBG-3:hover {
+    background-image: url("images/ProjectIMGs/PokedexRoundedHover.png");
 }
 
 /* About Page */
