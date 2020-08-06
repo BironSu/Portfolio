@@ -7,7 +7,10 @@ body {
     display: grid;
     grid-template-columns: 1fr;
 }
-
+.header-titles h1 {
+    padding-left: 5%;
+    color: seashell;
+}
 /* Nav Styles */
 .nav-wrapper {
     display: flex;
@@ -41,6 +44,7 @@ body {
 
 .nav-menu a, .brand a {
     color: #8a8a8a;
+    font-family: sans-serif;
     text-decoration: none;
     transition: color 0.5s;
 }
@@ -65,21 +69,27 @@ body {
 .intro-wrapper {
     position: relative;
     text-align: center;
+    background-image: url("images/BackgroundIMGs/coffeeShop.jpg");
+    background-size: 100% 120%;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 .intro-background {
-    background-color: skyblue;
+    background-color: rgba(0, 0, 0, 0.7);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
     padding: 15%;
 }
 .intro-center-text {
-    background-color: rgba(252, 252, 252, 0.6);
+    /* background-color: rgba(252, 252, 252, 0.6); */
+    color: seashell;
 }
 
 /* Projects */
 .project-container {
-    background: lightslategray;
+    background: black;
     height: auto;
 }
 .project-box {
@@ -90,7 +100,7 @@ body {
     padding-top: calc(1% + 1.9vmin);
 }
 .project-grid-wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(33%, 1fr));
     display: grid;
     height: auto;
@@ -100,13 +110,12 @@ body {
     grid-gap: 20px;
   }
 .project {
-    background-color: rgb(241, 148, 210);
     transition: 0.5s;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
 }
 .projectBG-1 {
