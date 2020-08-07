@@ -109,7 +109,7 @@ body {
     align-content: end;
     grid-gap: 20px;
   }
-.project {
+.project-button {
     transition: 0.5s;
     background-size: contain;
     background-repeat: no-repeat;
@@ -117,23 +117,27 @@ body {
     height: 300px;
     width: 300px;
     border-radius: 50%;
+    border-style: solid;
 }
-.projectBG-1 {
+.project-button:focus {
+    outline: none;
+}
+.projectButton-1 {
     background-image: url("images/ProjectIMGs/FlockRounded.png");
 }
-.projectBG-1:hover {
+.projectButton-1:hover, .projectButton-1:focus {
     background-image: url("images/ProjectIMGs/FlockRoundedHover.png");
 }
-.projectBG-2 {
+.projectButton-2 {
     background-image: url("images/ProjectIMGs/ZombieShooterRounded.png");
 }
-.projectBG-2:hover {
+.projectButton-2:hover, .projectButton-2:focus {
     background-image: url("images/ProjectIMGs/ZombieShooterRoundedHover.png");
 }
-.projectBG-3 {
+.projectButton-3 {
     background-image: url("images/ProjectIMGs/PokedexRounded.png");
 }
-.projectBG-3:hover {
+.projectButton-3:hover, .projectButton-3:focus {
     background-image: url("images/ProjectIMGs/PokedexRoundedHover.png");
 }
 
