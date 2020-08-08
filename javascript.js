@@ -89,3 +89,17 @@ $(window).scroll(function(){
          .end().filter("[href='#"+id+"']").parent().addClass("active-nav-link");
    }                   
 });
+
+// PROJECT DESCRIPTION VISIBILITY
+$('body').on("click touchstart", "#Button2, #Button3", function(e){
+    console.log("Hello");
+ });
+ $('body').on("click touchstart", "#Button1", function(e){
+    var x = document.getElementById("project1-description");
+    console.log(x);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+ });
