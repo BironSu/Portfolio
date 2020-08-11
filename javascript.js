@@ -3,11 +3,9 @@
 const portfolioItems = document.querySelectorAll('.contact-item-wrapper');
 portfolioItems.forEach(portfolioItem => {
     portfolioItem.addEventListener('mouseover', ()=> {
-        console.log(portfolioItem.childNodes[1].classList);
         portfolioItem.childNodes[1].classList.add('img-darken');
     })
     portfolioItem.addEventListener('mouseout', ()=> {
-        console.log(portfolioItem.childNodes[1].classList);
         portfolioItem.childNodes[1].classList.remove('img-darken');
     })
 })
@@ -92,38 +90,66 @@ $(window).scroll(function(){
 });
 
 // PROJECT DESCRIPTION VISIBILITY
-$('body').on("click touchstart", "#Button1", function(e){
-    var x = document.getElementById("project1-description");
-    if (x.style.visibility == "hidden") {
-        x.style.visibility = "visible";
-        x.style.opacity = "1";
-    } else {
-        x.style.visibility = "hidden"
-        x.style.opacity = "0";
-    }
-});
-$('body').on("click touchstart", "#Button2", function(e){
-    var x = document.getElementById("project2-description");
-    if (x.style.visibility == "hidden") {
-        x.style.visibility = "visible";
-        x.style.opacity = "1";
-    } else {
-        x.style.visibility = "hidden"
-        x.style.opacity = "0";
-    }
-});
-$('body').on("click touchstart", "#Button3", function(e){
-    var x = document.getElementById("project3-description");
-    if (x.style.visibility == "hidden") {
-        x.style.visibility = "visible";
-        x.style.opacity = "1";
-    } else {
-        x.style.visibility = "hidden"
-        x.style.opacity = "0";
-    }
-    console.log(e);
-});
+// $('body').on("click touchstart", "#Button1", function(e){
+//     var x = document.getElementById("project1-description");
+//     if (x.style.visibility == "hidden") {
+//         x.style.visibility = "visible";
+//         x.style.opacity = "1";
+//         x.style.display = "block";
+//     } else {
+//         x.style.visibility = "hidden"
+//         x.style.opacity = "0";
+//         x.style.display = "none";
+//     }
+// });
+// $('body').on("click touchstart", "#Button2", function(e){
+//     var x = document.getElementById("project2-description");
+//     if (x.style.visibility == "hidden") {
+//         x.style.visibility = "visible";
+//         x.style.opacity = "1";
+//         x.style.display = "block";
+//     } else {
+//         x.style.visibility = "hidden"
+//         x.style.opacity = "0";
+//         x.style.display = "none";
+//     }
+// });
+// $('body').on("click touchstart", "#Button3", function(e){
+//     var x = document.getElementById("project3-description");
+//     if (x.style.visibility == "hidden") {
+//         x.style.visibility = "visible";
+//         x.style.opacity = "1";
+//         x.style.display = "block";
+//     } else {
+//         x.style.visibility = "hidden"
+//         x.style.opacity = "0";
+//         x.style.display = "none";
+//     }
+// });
 
 function showDescription(button){
-    console.log(button);
+    var x = document.getElementById("project1-description");
+    var y = document.getElementById("project2-description");
+    var z = document.getElementById("project3-description");
+    if (button == "Button1"){
+        turnOn(x);
+        turnOff(y,z);
+    } else if (button == "Button2") {
+        turnOn(y);
+        turnOff(x,z);
+    } else {
+       turnOn(z);
+       turnOff(x,y);
+    }
+}
+function turnOn(desc){
+    desc.style.visibility = "visible";
+    desc.style.opacity = "1";
+}
+function turnOff(desc1, desc2){
+    desc1.style.visibility = "hidden"
+    desc1.style.opacity = "0";
+    
+    desc2.style.visibility = "hidden"
+    desc2.style.opacity = "0";
 }

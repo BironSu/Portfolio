@@ -96,7 +96,8 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    padding-bottom: calc(6% + 1.9vmin);
+    /* padding-bottom: calc(20% + 1.9vmin); */
+    padding-bottom: 300px;
     padding-top: calc(1% + 1.9vmin);
 }
 .project-grid-wrapper {
@@ -140,11 +141,28 @@ body {
 .projectButton-3:hover, .projectButton-3:focus {
     background-image: url("images/ProjectIMGs/PokedexRoundedHover.png");
 }
-
 .project-info{
     position: relative;
-    display: block;
+    /* text-align: center; */
+}
+#project1-description, #project2-description, #project3-description {
+    position: absolute;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 10%;
+    visibility: hidden;
+    bottom: 0;
+    opacity: 0;
     transition: visibility 1s, opacity 0.5s linear;
+}
+.project-title p {
+    color: whitesmoke;
+    font-size: 32px;
+}
+.project-description p {
+    color: whitesmoke;
+    font-size: 28px;
 }
 /* About Page */
 .about-me-wrapper {
