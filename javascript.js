@@ -11,6 +11,7 @@ portfolioItems.forEach(portfolioItem => {
         portfolioItem.childNodes[1].classList.remove('img-darken');
     })
 })
+
 // Intro Text Fade On Scroll
 $(window).scroll(function() {
     var scrollTop = $(this).scrollTop();
@@ -21,6 +22,7 @@ $(window).scroll(function() {
         }
     })
 });
+
 // Smooth Scrolling on Navigation
 window.smoothScroll = function(target) {
     var scrollContainer = target;
@@ -44,7 +46,6 @@ window.smoothScroll = function(target) {
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
-
 // Bind to scroll
 // Cache selectors
 var lastId,
@@ -56,7 +57,7 @@ var lastId,
     scrollItems = menuItems.map(function(){
       var item = $($(this).attr("href"));
       if (item.length) { return item; }
-    });
+});
 // Bind click handler to menu items
 // so we can get a fancy scroll animation
 menuItems.click(function(e){
@@ -66,7 +67,7 @@ menuItems.click(function(e){
         scrollTop: offsetTop
     }, 300);
     e.preventDefault();
-  });
+});
 // Bind to scroll
 $(window).scroll(function(){
    // Get container scroll position
@@ -120,4 +121,9 @@ $('body').on("click touchstart", "#Button3", function(e){
         x.style.visibility = "hidden"
         x.style.opacity = "0";
     }
+    console.log(e);
 });
+
+function showDescription(button){
+    console.log(button);
+}

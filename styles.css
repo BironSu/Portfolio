@@ -142,7 +142,7 @@ body {
 }
 
 .project-info{
-    position: absolute;
+    position: relative;
     display: block;
     transition: visibility 1s, opacity 0.5s linear;
 }
