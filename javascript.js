@@ -11,6 +11,7 @@ portfolioItems.forEach(portfolioItem => {
         portfolioItem.childNodes[1].classList.remove('img-darken');
     })
 })
+
 // Intro Text Fade On Scroll
 $(window).scroll(function() {
     var scrollTop = $(this).scrollTop();
@@ -21,6 +22,7 @@ $(window).scroll(function() {
         }
     })
 });
+
 // Smooth Scrolling on Navigation
 window.smoothScroll = function(target) {
     var scrollContainer = target;
@@ -44,54 +46,6 @@ window.smoothScroll = function(target) {
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
-// Active Link Changer
-// Cache selectors
-var lastId,
-    topMenu = $("#top-menu"),
-    topMenuHeight = topMenu.outerHeight()+15,
-    // All list items
-    menuItems = topMenu.find("a"),
-    // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function(){
-      var item = $($(this).attr("href"));
-      if (item.length) { return item; }
-    });
-
-// Bind click handler to menu items
-// so we can get a fancy scroll animation
-menuItems.click(function(e){
-  var href = $(this).attr("href"),
-      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-  $('html, body').stop().animate({ 
-      scrollTop: offsetTop
-  }, 300);
-  e.preventDefault();
-});
-
-// Bind to scroll
-// Cache selectors
-var lastId,
-    topMenu = $("#top-menu"),
-    topMenuHeight = topMenu.outerHeight()+15,
-    // All list items
-    menuItems = topMenu.find("a"),
-    // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function(){
-      var item = $($(this).attr("href"));
-      if (item.length) { return item; }
-    });
-
-// Bind click handler to menu items
-// so we can get a fancy scroll animation
-menuItems.click(function(e){
-  var href = $(this).attr("href"),
-      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-  $('html, body').stop().animate({ 
-      scrollTop: offsetTop
-  }, 300);
-  e.preventDefault();
-});
-
 // Bind to scroll
 // Cache selectors
 var lastId,
@@ -103,7 +57,7 @@ var lastId,
     scrollItems = menuItems.map(function(){
       var item = $($(this).attr("href"));
       if (item.length) { return item; }
-    });
+});
 // Bind click handler to menu items
 // so we can get a fancy scroll animation
 menuItems.click(function(e){
@@ -113,7 +67,7 @@ menuItems.click(function(e){
         scrollTop: offsetTop
     }, 300);
     e.preventDefault();
-  });
+});
 // Bind to scroll
 $(window).scroll(function(){
    // Get container scroll position
@@ -136,3 +90,40 @@ $(window).scroll(function(){
          .end().filter("[href='#"+id+"']").parent().addClass("active-nav-link");
    }                   
 });
+
+// PROJECT DESCRIPTION VISIBILITY
+$('body').on("click touchstart", "#Button1", function(e){
+    var x = document.getElementById("project1-description");
+    if (x.style.visibility == "hidden") {
+        x.style.visibility = "visible";
+        x.style.opacity = "1";
+    } else {
+        x.style.visibility = "hidden"
+        x.style.opacity = "0";
+    }
+});
+$('body').on("click touchstart", "#Button2", function(e){
+    var x = document.getElementById("project2-description");
+    if (x.style.visibility == "hidden") {
+        x.style.visibility = "visible";
+        x.style.opacity = "1";
+    } else {
+        x.style.visibility = "hidden"
+        x.style.opacity = "0";
+    }
+});
+$('body').on("click touchstart", "#Button3", function(e){
+    var x = document.getElementById("project3-description");
+    if (x.style.visibility == "hidden") {
+        x.style.visibility = "visible";
+        x.style.opacity = "1";
+    } else {
+        x.style.visibility = "hidden"
+        x.style.opacity = "0";
+    }
+    console.log(e);
+});
+
+function showDescription(button){
+    console.log(button);
+}
