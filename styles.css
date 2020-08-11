@@ -141,8 +141,10 @@ body {
     background-image: url("images/ProjectIMGs/PokedexRoundedHover.png");
 }
 
-.project-info h1 {
-    transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s ease-in-out;
+.project-info{
+    position: absolute;
+    display: block;
+    transition: visibility 1s, opacity 0.5s linear;
 }
 /* About Page */
 .about-me-wrapper {

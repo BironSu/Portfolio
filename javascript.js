@@ -91,15 +91,33 @@ $(window).scroll(function(){
 });
 
 // PROJECT DESCRIPTION VISIBILITY
-$('body').on("click touchstart", "#Button2, #Button3", function(e){
-    console.log("Hello");
- });
- $('body').on("click touchstart", "#Button1", function(e){
+$('body').on("click touchstart", "#Button1", function(e){
     var x = document.getElementById("project1-description");
-    console.log(x);
-    if (x.style.display === "none") {
-        x.style.display = "block";
+    if (x.style.visibility == "hidden") {
+        x.style.visibility = "visible";
+        x.style.opacity = "1";
     } else {
-        x.style.display = "none";
+        x.style.visibility = "hidden"
+        x.style.opacity = "0";
     }
- });
+});
+$('body').on("click touchstart", "#Button2", function(e){
+    var x = document.getElementById("project2-description");
+    if (x.style.visibility == "hidden") {
+        x.style.visibility = "visible";
+        x.style.opacity = "1";
+    } else {
+        x.style.visibility = "hidden"
+        x.style.opacity = "0";
+    }
+});
+$('body').on("click touchstart", "#Button3", function(e){
+    var x = document.getElementById("project3-description");
+    if (x.style.visibility == "hidden") {
+        x.style.visibility = "visible";
+        x.style.opacity = "1";
+    } else {
+        x.style.visibility = "hidden"
+        x.style.opacity = "0";
+    }
+});
