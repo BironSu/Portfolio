@@ -39,7 +39,7 @@ body {
 .nav-menu {
     height: 22px;
     border-bottom: 1px solid transparent;
-    transition: border-bottom 0.5s;
+    transition: 1s;
 }
 
 .nav-menu a, .brand a {
@@ -50,19 +50,15 @@ body {
 }
 
 .nav-menu:hover a{
-    border-bottom: 1px solid black;
-}
-
-.nav-menu:hover a {
-    color: black;
+    border-bottom: 2px solid #8a8a8a;
+    font-weight: bold;
+    color: #8a8a8a;
 }
 
 .active-nav-link {
-    border-bottom: 1px solid black;
-}
-
-.active-nav-link a {
+    border-bottom: 2px solid black !important;
     color: black !important;
+    font-weight: bold;
 }
 
 /* Introduction Page*/
