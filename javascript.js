@@ -46,8 +46,7 @@ window.smoothScroll = function(target) {
 }
 // Bind to scroll
 // Cache selectors
-var lastId,
-    topMenu = $("#top-menu"),
+var topMenu = $("#top-menu"),
     topMenuHeight = topMenu.outerHeight()+15,
     // All list items
     menuItems = topMenu.find("a"),
