@@ -1,8 +1,7 @@
+var previousLink;
 
-// MouseOver Grid
 const portfolioItems = document.querySelectorAll('.contact-item-wrapper');
-// Bind to scroll
-// Cache selectors
+
 var topMenu = $("#top-menu"),
     topMenuHeight = topMenu.outerHeight() + 15,
     // All list items
@@ -12,6 +11,7 @@ var topMenu = $("#top-menu"),
         var item = $($(this).attr("href"));
         if (item.length) { return item; }
     });
+
 portfolioItems.forEach(portfolioItem => {
     portfolioItem.addEventListener('mouseover', () => {
         portfolioItem.childNodes[1].classList.add('img-darken');
@@ -21,15 +21,32 @@ portfolioItems.forEach(portfolioItem => {
     })
 })
 
-// Intro Text Fade On Scroll
+const projectLink = menuItems.filter(function (_, menuItem) {
+    return menuItem.getAttribute('href') === '#project';
+});
+const aboutLink = menuItems.filter(function (_, menuItem) {
+    return menuItem.getAttribute('href') === '#about';
+});
+const contactLink = menuItems.filter(function (_, menuItem) {
+    return menuItem.getAttribute('href') === '#contact';
+});
 let headers = {
     projectsID: document.getElementById("project-top"),
     aboutID: document.getElementById("about-top"),
-    contactID: document.getElementById("contact-top")
+    contactID: document.getElementById("contact-top"),
+    homeID: document.getElementById("intro-top")
 };
-function isHidden(el) {
-    return (el.offsetParent === null)
-}
+
+var isInViewport = function (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+
 $(window).scroll(function () {
     var scrollTop = $(this).scrollTop();
     $('.intro-center-text').css({
@@ -38,11 +55,34 @@ $(window).scroll(function () {
             return opacity;
         }
     })
-    if (!isHidden(headers.projectsID)){
-        const projectLink = menuItems.filter(function(_,menuItem) {
-            return menuItem.getAttribute('href') === '#project';
-        });
+    const projectLink = menuItems.filter(function (_, menuItem) {
+        return menuItem.getAttribute('href') === '#project';
+    });
+    const aboutLink = menuItems.filter(function (_, menuItem) {
+        return menuItem.getAttribute('href') === '#about';
+    });
+    const contactLink = menuItems.filter(function (_, menuItem) {
+        return menuItem.getAttribute('href') === '#contact';
+    });
+    const homeLink = menuItems.filter(function (_, menuItem) {
+        return menuItem.getAttribute('href') === '#home';
+    });
+    if (isInViewport(headers.projectsID)) {
         projectLink[0].classList.add("active-nav-link");
+        aboutLink[0].classList.remove("active-nav-link");
+        contactLink[0].classList.remove("active-nav-link");
+    } else if (isInViewport(headers.aboutID)) {
+        aboutLink[0].classList.add("active-nav-link");
+        projectLink[0].classList.remove("active-nav-link");
+        contactLink[0].classList.remove("active-nav-link");
+    } else if (isInViewport(headers.contactID)) {
+        contactLink[0].classList.add("active-nav-link");
+        projectLink[0].classList.remove("active-nav-link");
+        aboutLink[0].classList.remove("active-nav-link");
+    } else if (isInViewport(headers.homeID)) {
+        projectLink[0].classList.remove("active-nav-link");
+        aboutLink[0].classList.remove("active-nav-link");
+        contactLink[0].classList.remove("active-nav-link");
     }
 });
 
@@ -70,7 +110,7 @@ window.smoothScroll = function (target) {
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
 // Adding Active Link
-var previousLink;
+
 menuItems.click(function (e) {
     var href = $(this).attr("href"),
         offsetTop = href === "#" ? 0 : $(href).offset();
@@ -105,9 +145,4 @@ function turnOn(desc) {
 function turnOff(desc1, desc2) {
     desc1.className = "";
     desc2.className = "";
-
-}
-
-function isHidden(el) {
-    return (el.offsetParent === null)
 }
