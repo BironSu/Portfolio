@@ -18,7 +18,7 @@ body {
     padding: 38px;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
     background: rgba(245, 245, 245, 1);
 }
 
@@ -74,33 +74,35 @@ body {
 .intro-background {
     background-color: rgba(0, 0, 0, 0.7);
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: local;
     background-size: 100% 100%;
     padding: 15%;
 }
 .intro-center-text {
-    /* background-color: rgba(252, 252, 252, 0.6); */
     color: seashell;
 }
 
 /* Projects */
 .project-container {
+    position: relative;
+    z-index: 90;
     background: black;
-    height: auto;
+    height: 100%;
+    overflow: hidden;
+    
 }
 .project-box {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    /* padding-bottom: calc(20% + 1.9vmin); */
-    /* padding-bottom: 300px; */
     padding-top: calc(1% + 1.9vmin);
 }
 .project-grid-wrapper {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(33%, 1fr));
     display: grid;
-    height: auto;
+    height: 100%;
+    flex-direction: row;
     justify-items: center;
     justify-content: center;
     align-content: end;
@@ -138,14 +140,42 @@ body {
     background-image: url("images/ProjectIMGs/PokedexRoundedHover.png");
 }
 .project-description-container {
+    position: relative;
     width: 100%;
-    height: 300px;
+    /* height: 50vh; */
 }
-.project-info{
+.project-info {
     position: relative;
     width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
     bottom: 0;
-    /* text-align: center; */
+}
+
+#project1-description, #project2-description, #project3-description {
+    transition: opacity 1s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+#project1-description.active, #project2-description.active, #project3-description.active {
+    display: block;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    padding-left: 4%;
+    padding-right: 4%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s, opacity 0.5s linear;
+}
+#project-place-holder {
+    visibility: visible;
+    opacity: 1;
 }
 .project-picture {
     width: 50%;
@@ -153,21 +183,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("images/BackgroundIMGs/linkedInBackground.jpg");
-}
-#project1-description, #project2-description, #project3-description {
-    position: absolute;
-    text-align: center;
-    padding-left: 10%;
-    padding-right: 10%;
-    /* margin-top: 10%; */
-    visibility: hidden;
-    /* bottom: 0; */
-    opacity: 0;
-    transition: visibility 1s, opacity 0.5s linear;
-}
-#project-place-holder {
-    visibility: visible;
-    opacity: 1;
 }
 .project-title p {
     color: whitesmoke;
@@ -234,7 +249,7 @@ footer{
     padding-left: 100px;
     padding-right: 100px;
 }
-.img-text-wrapper a{
+.img-text-wrapper a {
     text-decoration: none;
 }
 
@@ -263,7 +278,7 @@ footer{
     font-size: large;
 }
 
-.img-darken{
+.img-darken {
     transition: 1s;
     filter: brightness(60%);
 }
