@@ -85,10 +85,11 @@ body {
 /* Projects */
 .project-container {
     position: relative;
-    z-index: 70;
+    z-index: 90;
     background: black;
-    height: auto;
+    height: 100%;
     overflow: hidden;
+    
 }
 .project-box {
     display: flex;
@@ -100,7 +101,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(33%, 1fr));
     display: grid;
-    height: auto;
+    height: 100%;
     flex-direction: row;
     justify-items: center;
     justify-content: center;

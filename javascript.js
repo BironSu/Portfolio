@@ -39,6 +39,14 @@ let headers = {
 
 var isInViewport = function (elem) {
     var bounding = elem.getBoundingClientRect();
+    const elemHeight = (window.innerHeight || document.documentElement.clientHeight);
+    const elemWidth = (window.innerWidth || document.documentElement.clientWidth);
+    const {left, top, bottom, right} = bounding;
+    console.log({ top, bottom, right, elemHeight, elemWidth},
+          bounding.top >= 0,  bounding.left >= 0,
+          bounding.bottom <= elemHeight,
+          bounding.right <= elemWidth,
+          elem.id);
     return (
         bounding.top >= 0 &&
         bounding.left >= 0 &&
@@ -54,7 +62,7 @@ $(window).scroll(function () {
             opacity = 1 - (scrollTop * 0.003);
             return opacity;
         }
-    })
+    });
     const projectLink = menuItems.filter(function (_, menuItem) {
         return menuItem.getAttribute('href') === '#project';
     });
@@ -83,7 +91,7 @@ $(window).scroll(function () {
         projectLink[0].classList.remove("active-nav-link");
         aboutLink[0].classList.remove("active-nav-link");
         contactLink[0].classList.remove("active-nav-link");
-    }
+    };
 });
 
 // Smooth Scrolling on Navigation
@@ -95,7 +103,7 @@ window.smoothScroll = function (target) {
         scrollContainer.scrollTop += 1;
     } while (scrollContainer.scrollTop == 0);
 
-    var targetY = -90
+    var targetY = -90;
     do { //find the top of target relatively to the container
         if (target == scrollContainer) break;
         targetY += target.offsetTop;
@@ -105,10 +113,10 @@ window.smoothScroll = function (target) {
         i++; if (i > 30) return;
         c.scrollTop = a + (b - a) / 30 * i;
         setTimeout(function () { scroll(c, a, b, i); }, 20);
-    }
+    };
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-}
+};
 // Adding Active Link
 
 menuItems.click(function (e) {
@@ -129,6 +137,10 @@ function showDescription(button) {
     var y = document.getElementById("project2-description");
     var z = document.getElementById("project3-description");
     if (button == "Button1") {
+        if (x.className === 'active') {
+            x.className = '';
+            return;
+        }
         turnOn(x);
         turnOff(y, z);
     } else if (button == "Button2") {
@@ -140,7 +152,9 @@ function showDescription(button) {
     }
 }
 function turnOn(desc) {
+    console.log(desc.classList);
     desc.classList.add("active");
+    console.log(desc.classList);
 }
 function turnOff(desc1, desc2) {
     desc1.className = "";
