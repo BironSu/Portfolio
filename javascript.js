@@ -120,17 +120,17 @@ window.smoothScroll = function (target) {
 // Adding Active Link
 
 menuItems.click(function (e) {
-    var href = $(this).attr("href"),
-        offsetTop = href === "#" ? 0 : $(href).offset();
-    if (previousLink !== undefined) {
-        previousLink.classList.remove("active-nav-link");
-    }
-    previousLink = this;
-    this.classList.add("active-nav-link");
-    $('html, body').stop().animate({
-        scrollTop: offsetTop
-    }, 300);
-    e.preventDefault();
+    // var href = $(this).attr("href"),
+    //     offsetTop = href === "#" ? 0 : $(href).offset();
+    // if (previousLink !== undefined) {
+    //     previousLink.classList.remove("active-nav-link");
+    // }
+    // previousLink = this;
+    // this.classList.add("active-nav-link");
+    // $('html, body').stop().animate({
+    //     scrollTop: offsetTop
+    // }, 300);
+    // e.preventDefault();
 });
 function showDescription(button) {
     var x = document.getElementById("project1-description");
